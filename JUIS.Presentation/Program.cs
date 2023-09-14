@@ -23,7 +23,7 @@ builder.Services.AddDbContext<UserDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 //builder.Services.AddScoped<IUserRepository, UserRepository>();
 
-//builder.Services.AddScoped<INotificationService, SignalRNotificationService>();
+builder.Services.AddScoped<INotificationService, SignalRNotificationService>();
 
 var app = builder.Build();
 

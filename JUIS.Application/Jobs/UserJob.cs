@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JUIS.Application.Jobs
 {
-    public class UserJob
+    public class UserJob : IUserJob
     {
         private readonly IUserRepository _userRepository;
         private readonly INotificationService _notificationService;

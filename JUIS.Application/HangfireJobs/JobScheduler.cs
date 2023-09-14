@@ -15,6 +15,7 @@ namespace JUIS.Application.HangfireJobs
         public void ScheduleUserSave(Expression<Action> action, TimeSpan delay)
         {
             BackgroundJob.Schedule(action, delay);
+
         }
     }
 

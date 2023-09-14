@@ -22,7 +22,7 @@ namespace JUIS.Application
             // Add the processing server as IHostedService
             services.AddHangfireServer();
 
-            services.AddSingleton<UserJob>();
+            services.AddScoped<IUserJob, UserJob>();
             services.AddScoped<IJobScheduler, JobScheduler>();
             services.AddScoped<IUserRepository, UserRepository>();
 
