@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JUIS.Application.Interfaces
+namespace JUIS.Domain.Interfaces
 {
     public interface INotificationService
     {
