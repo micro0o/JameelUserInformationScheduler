@@ -26,7 +26,18 @@ namespace JUIS.Presentation.Controllers
             _userJob = userJob;
         }
 
+        // GET: api/User/GetUsers
+        [Route("GetUsers")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        {
+            var users = await _userRepository.GetAllUsers();
+            return Ok(users);
+        }
+
+        // GET: api/User/SaveUser
         [HttpPost]
+        [Route("SaveUser")]
         public IActionResult SaveUser([FromBody] User user)
         {
             //_jobScheduler.ScheduleUserSave(() => _userJob.SaveUserAndSendNotification(user).Wait(), TimeSpan.FromMinutes(5));
