@@ -1,8 +1,7 @@
 ﻿using Hangfire;
-using JUIS.Application.Interfaces;
-using JUIS.Application.Jobs;
-using JUIS.Application.Services;
 using JUIS.Domain.Interfaces;
+using JUIS.Application.Jobs;
+using JUIS.Application.HangfireJobs;
 using JUIS.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -26,6 +25,9 @@ namespace JUIS.Application
             services.AddSingleton<UserJob>();
             services.AddScoped<IJobScheduler, JobScheduler>();
             services.AddScoped<IUserRepository, UserRepository>();
+
+            //services.AddScoped<INotificationService, SignalRNotificationService>();
+
 
             return services;
         }

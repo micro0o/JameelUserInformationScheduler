@@ -16,4 +16,8 @@
     <ProjectReference Include="..\JUIS.Infrastructure\JUIS.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="SignalRServices\" />
+  </ItemGroup>
+
 </Project>

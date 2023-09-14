@@ -1,5 +1,4 @@
-﻿using JUIS.Application.Interfaces;
-using JUIS.Application.Jobs;
+﻿using JUIS.Application.Jobs;
 using JUIS.Domain.Entities;
 using JUIS.Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
