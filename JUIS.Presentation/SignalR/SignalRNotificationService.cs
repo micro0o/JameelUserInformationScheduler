@@ -14,7 +14,7 @@ namespace JUIS.Presentation.SignalR
 
         public async Task SendNotification(string message)
         {
-            await _hubContext.Clients.All.SendAsync("ReceiveNotification", message);
+            await _hubContext.Clients.All.SendAsync("UserAdded", message);
         }
     }
 }
