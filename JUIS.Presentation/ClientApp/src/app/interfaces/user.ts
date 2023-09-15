@@ -3,6 +3,6 @@ export interface User {
   firstName?: string;
   lastName?: string;
   dateOfBirth?: string;
-  PhoneNumber?: string;
-  Address?: string;
+  phoneNumber?: string;
+  address?: string;
 }

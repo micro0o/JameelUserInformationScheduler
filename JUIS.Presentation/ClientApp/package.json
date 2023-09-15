@@ -20,6 +20,8 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "@aspnet/signalr": "^1.0.27",
+    "@ng-icons/core": "^25.2.0",
+    "@ng-icons/ionicons": "^25.2.0",
     "bootstrap": "^5.2.3",
     "ngx-bootstrap": "^11.0.2",
     "rxjs": "~7.8.0",

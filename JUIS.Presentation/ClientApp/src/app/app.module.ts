@@ -6,9 +6,12 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { NgIconsModule } from '@ng-icons/core';
+import { ionLocationOutline, ionCallOutline } from '@ng-icons/ionicons';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     ReactiveFormsModule,
     NgIf,
     BrowserAnimationsModule,
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    NgIconsModule.withIcons({ ionLocationOutline, ionCallOutline }),
+    BsDatepickerModule.forRoot(),
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
