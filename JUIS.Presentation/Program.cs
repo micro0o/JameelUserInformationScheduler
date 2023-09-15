@@ -37,7 +37,7 @@ builder.Services.AddDbContext<UserDbContext>(options =>
 //builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<INotificationService, SignalRNotificationService>();
-
+builder.Services.AddHealthChecks();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -61,6 +61,7 @@ app.UseRouting().UseEndpoints(e => {
     e.MapControllers();
     e.MapHangfireDashboard();
     e.MapHub<NotificationHub>("/notificationHub");
+    e.MapHealthChecks("/healthCheck");
 });
 
 app.Run();

@@ -5,13 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CommonModule, NgIf } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { NgIconsModule } from '@ng-icons/core';
-import { ionLocationOutline, ionCallOutline } from '@ng-icons/ionicons';
+import { ionLocationOutline, ionCallOutline, ionEllipse, ionCloudOffline, ionCloudDone } from '@ng-icons/ionicons';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import {
+  NgxMaskDirective, NgxMaskPipe, provideNgxMask
+} from 'ngx-mask';
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
 
 
 @NgModule({
@@ -28,11 +33,12 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     NgIf,
     BrowserAnimationsModule,
     TooltipModule.forRoot(),
-    NgIconsModule.withIcons({ ionLocationOutline, ionCallOutline }),
+    NgIconsModule.withIcons({ ionLocationOutline, ionCallOutline, ionEllipse, ionCloudOffline, ionCloudDone }),
     BsDatepickerModule.forRoot(),
-    CommonModule
+    CommonModule,
+    NgxMaskDirective, NgxMaskPipe, AlertModule.forRoot()
   ],
-  providers: [],
+  providers: [provideNgxMask(), { provide: HTTP_INTERCEPTORS, useClass: HttpErrorsInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
